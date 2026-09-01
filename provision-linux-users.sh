@@ -22,47 +22,71 @@ echo "Criando usuários..."
 # -G: adiciona o usuário ao grupo informado.
 #
 # O formato aceito pelo chpasswd é usuario:senha.
-# O caractere | envia o resultado do echo para o comando chpasswd.
-# passwd -e expira a senha e obriga sua troca no primeiro login.
+# As senhas abaixo são exemplos utilizados somente neste exercício.
+# passwd -e obriga o usuário a trocar a senha no primeiro login.
 
+# Cria o usuário carlos no grupo de administração.
 useradd carlos -m -s /bin/bash -G GRP_ADM
-# Define uma senha inicial temporária para o usuário carlos.
-echo "carlos:Carlos@123" | sudo chpasswd
-sudo passwd -e carlos
+# Define uma senha temporária de exemplo.
+echo "carlos:Carlos123" | chpasswd
+# Obriga carlos a trocar a senha no primeiro acesso.
+passwd -e carlos
+
+# Cria a usuária maria no grupo de administração.
 useradd maria -m -s /bin/bash -G GRP_ADM
-# Define uma senha inicial temporária para a usuária maria.
-echo "maria:Maria@123" | sudo chpasswd
-sudo passwd -e maria
+# Define uma senha temporária de exemplo.
+echo "maria:Maria123" | chpasswd
+# Obriga maria a trocar a senha no primeiro acesso.
+passwd -e maria
+
+# Cria o usuário joao no grupo de administração.
 useradd joao -m -s /bin/bash -G GRP_ADM
-# Define uma senha inicial temporária para o usuário joao.
-echo "joao:Joao@123" | sudo chpasswd
-sudo passwd -e joao
+# Define uma senha temporária de exemplo.
+echo "joao:Joao123" | chpasswd
+# Obriga joao a trocar a senha no primeiro acesso.
+passwd -e joao
 
+# Cria a usuária debora no grupo de vendas.
 useradd debora -m -s /bin/bash -G GRP_VEN
-# Define uma senha inicial temporária para a usuária debora.
-echo "debora:Debora@123" | sudo chpasswd
-sudo passwd -e debora
-useradd sebastiana -m -s /bin/bash -G GRP_VEN
-# Define uma senha inicial temporária para a usuária sebastiana.
-echo "sebastiana:Sebastiana@123" | sudo chpasswd
-sudo passwd -e sebastiana
-useradd roberto -m -s /bin/bash -G GRP_VEN
-# Define uma senha inicial temporária para o usuário roberto.
-echo "roberto:Roberto@123" | sudo chpasswd
-sudo passwd -e roberto
+# Define uma senha temporária de exemplo.
+echo "debora:Debora123" | chpasswd
+# Obriga debora a trocar a senha no primeiro acesso.
+passwd -e debora
 
+# Cria a usuária sebastiana no grupo de vendas.
+useradd sebastiana -m -s /bin/bash -G GRP_VEN
+# Define uma senha temporária de exemplo.
+echo "sebastiana:Sebastiana123" | chpasswd
+# Obriga sebastiana a trocar a senha no primeiro acesso.
+passwd -e sebastiana
+
+# Cria o usuário roberto no grupo de vendas.
+useradd roberto -m -s /bin/bash -G GRP_VEN
+# Define uma senha temporária de exemplo.
+echo "roberto:Roberto123" | chpasswd
+# Obriga roberto a trocar a senha no primeiro acesso.
+passwd -e roberto
+
+# Cria a usuária josefina no grupo de secretaria.
 useradd josefina -m -s /bin/bash -G GRP_SEC
-# Define uma senha inicial temporária para a usuária josefina.
-echo "josefina:Josefina@123" | sudo chpasswd
-sudo passwd -e josefina
+# Define uma senha temporária de exemplo.
+echo "josefina:Josefina123" | chpasswd
+# Obriga josefina a trocar a senha no primeiro acesso.
+passwd -e josefina
+
+# Cria a usuária amanda no grupo de secretaria.
 useradd amanda -m -s /bin/bash -G GRP_SEC
-# Define uma senha inicial temporária para a usuária amanda.
-echo "amanda:Amanda@123" | sudo chpasswd
-sudo passwd -e amanda
+# Define uma senha temporária de exemplo.
+echo "amanda:Amanda123" | chpasswd
+# Obriga amanda a trocar a senha no primeiro acesso.
+passwd -e amanda
+
+# Cria o usuário rogerio no grupo de secretaria.
 useradd rogerio -m -s /bin/bash -G GRP_SEC
-# Define uma senha inicial temporária para o usuário rogerio.
-echo "rogerio:Rogerio@123" | sudo chpasswd
-sudo passwd -e rogerio
+# Define uma senha temporária de exemplo.
+echo "rogerio:Rogerio123" | chpasswd
+# Obriga rogerio a trocar a senha no primeiro acesso.
+passwd -e rogerio
 
 echo "Especificando permissões dos diretórios..."
 chown root:GRP_ADM /adm
@@ -75,4 +99,3 @@ chmod 770 /sec
 chmod 777 /publico
 
 echo "Fim."
-
